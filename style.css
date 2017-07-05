@@ -1,0 +1,19 @@
+/* 
+purple: #292942;
+
+*/
+
+body {
+    padding: 0;
+    margin:0;
+}
+
+ol {
+    margin: 0;
+}
+
+div#outer-form {
+    background: #292942;
+    width: 40vw;
+    margin: 0 auto;
+}
