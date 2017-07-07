@@ -13,7 +13,7 @@ body {
     color: #5F5F71;
     font-family: sans-serif;
     background: linear-gradient(to right, #E986C0 , #8C6BB8);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 ol {
@@ -48,13 +48,17 @@ p {
     font-size: 0.75em;
     border: 3px solid #5F5F71;
     border-radius: 100%;
-    padding: 0.25em 0.75em;
+    padding: 0.5em 0.75em;
     margin: 10px 5%;
 }
 
 p.selected {
     background: #292942;
     border: 3px solid #792955;
+}
+
+p:hover {
+    border-color: white;
 }
 
 button {
@@ -66,7 +70,6 @@ button {
     margin: 40px auto 0 auto;
     font-weight: bold;
     font-size: 1em;
-    font-family: 'Quicksand';
     text-transform: uppercase;
     color: #792955;
 }
