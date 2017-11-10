@@ -73,13 +73,17 @@ p {
     padding: 0.5em 0.75em;
     margin: 10px 5%;
 }
-p.selected {
-    background: #292942;
-    border: 3px solid #792955;
+p:active {
+    border-color: black;
 }
 p:hover {
     border-color: white;
 }
+p.selected {
+    background: #292942;
+    border: 3px solid #792955;
+}
+
 
 
 
