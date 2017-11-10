@@ -1,40 +1,16 @@
-
-
-let options = document.querySelectorAll('p'); // Returns NodeList
-
-options.forEach( (element) => {
-
-    element.addEventListener( 'click', () => { there_can_be_only_one_selected(element) } );
-        
-});
-
-
-
-let button = document.querySelector('button');
-let questionItems = object_to_array( document.querySelectorAll('li') ); 
-let questions = [];
-
-// Get raw strings of question instead of elements
-questionItems.forEach( (questionItem) => {
-                questions.push( questionItem.innerText );
-})
-
+let question_sets = object_to_array( document.querySelectorAll("div.question-set") );
 
 button.addEventListener('click', () => {
-    // Get all of the selected elements...
-    let selectedOptions = document.querySelectorAll('.selected');
-    let selectedInput = [];
+    /* Look at each question set
+        - Establish which option has the selected class
+        - Record it's number
+            - If none selected, record as zero
+        - Each number should refer to a dictionary
+        - The matching statement should be pushed to model string
+        - Present modal
+    */
 
-    // Grab the data out of those selected elements
-    selectedOptions.forEach( (selectedOption) => {
-        selectedInput.push( selectedOption.innerText);
-    })
-
-    // Alert the user of what they selected
-    alert("Here's what you selected: \n" + selectedInput)
-
-    // TODO: Autodirect to a new page personalized due to their selection
-});
+})
 
 
 
