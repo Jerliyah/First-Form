@@ -15,28 +15,19 @@ let button = document.getElementsByTagName("button")[0];
 button.addEventListener('click', () => { form_submission() })
 
 function form_submission() {
-    /* Look at each question set
-        - Establish which option has the selected class
-        - Record it's number
-            - If none selected, record as zero
-        - Each number should refer to a dictionary
-        - The matching statement should be pushed to model string
-        - Present modal
-    */
-    console.log("form submitted");
-    let submission_message = "The form has been submitted. Let's see your results: \n";
+
+    let submission_message = "The form has been submitted. Let's see your results: \n\n";
 
     for(let counter=0; counter < question_sets.length; counter++) {
         let question_set = question_sets[counter];
-
-        console.log(question_set.querySelector("li").innerText);
         
         let selected_option = find_selected_option(question_set.querySelector("div.options-ctn"));
 
         submission_message += `${counter+1}. ${get_messages(counter, selected_option)} \n`;
     }
        
-    alert(submission_message)
+    alert(submission_message);
+    clear_selections();
     
 }
 
@@ -46,6 +37,11 @@ function form_submission() {
 
 
 // Helper Functions
+function clear_selections() {
+    options.forEach( (option) => { option.classList = "" } )
+}
+
+
 function find_selected_option(parent) {
 
     for(let counter=0; counter < parent.children.length; counter++) {
@@ -88,15 +84,66 @@ function get_messages(questionNumber, selectedNumber) {
 
         case 0: 
             switch(selectedNumber) {
-                case 0: return "I guess you don't know how cubic you are"
-                case 1: return "Ah, you're definetely a cylinder"
-                case 2: return "Hmm, perhaps you're a pyramid"
-                case 3: return "Pretty cubic, perhaps of a rectangular prism though"
-                case 4: "Yay! Cubic all the way!"
+                case 1: return "Meh, such a sphere"
+                case 2: return "Ah, you're definetely a cylinder"
+                case 3: return "Hmm, perhaps you're a pyramid"
+                case 4: return "Pretty cubic, perhaps of a rectangular prism though"
+                case 5: "Mathmatical! Cubic all the way!"
+
+                default: return "I guess you don't know how cubic you are"
             }
         break;
-        default:
-            return "Haven't gotten to these questions yet"
+
+        case 1:
+            switch(selectedNumber) { 
+                case 1: return "Aw, no love for the universe :("
+                case 2: return "Oh come on, the universe has some pretty interesting stuff"
+                case 3: return "Neutral, that's fair"
+                case 4: return "More good than bad, that's a nice way to view it"
+                case 5: return "You love the universe! Someone is having a great day"
+
+                default: return "Connect with the universe and try again. I recommend by watching Steven Universe :D "
+            }
+        break;
+        
+        case 2:
+            switch(selectedNumber) { 
+                case 1: return "Why you gotta hate on stalactites?"
+                case 2: return "They can be dangerous if they fall so I can understand"
+                case 3: return "They just exist like everything else, fair point"
+                case 4: return "They can look pretty cool"
+                case 5: return "Wow, what makes you love stalactites?"
+
+                default: return "Check out some pictures of them, they can be kewl but also scary"
+            }
+        break;
+
+        case 3:
+            switch(selectedNumber) { 
+                case 1: return "Noodle? Hmm, I like noodles"
+                case 2: return "Burpleberry, sounds like a color and a food *^^*"
+                case 3: return "Meh, you get gray"
+                case 4: return "A, as in alphabet and apple-green. Good choice"
+                case 5: return `Cookie Cat! He's a pet for your tummy!
+                Cookie Cat! He's super duper yummy!
+                Cookie Cat! He left his family behind!
+                Cookie Caaaaat! `
+
+                default: return "For this, I would recommend B(ee). As in the letter B, and bee which refers to the animal and could be considered a color pattern. Haha, smart right?"
+            }
+        break;
+
+        case 4:
+        switch(selectedNumber) { 
+            case 1: return "No seafood for you"
+            case 2: return "He needs some MILK"
+            case 3: return "Shrimp for you, shrimp for me, we're all at the shrimp party"
+            case 4: return "Let's get EXTRA shrimpy!"
+            case 5: return "SSSSSHHHHHRRRRIIIIIMMMMMMMPPPPP"
+
+            default: return
+        }
+        break;
     }
 }
 
